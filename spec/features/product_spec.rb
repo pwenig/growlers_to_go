@@ -17,5 +17,18 @@ feature 'Products' do
     expect(page).to have_css('img', visible:'image.png')
   end
 
+  scenario 'admin can edit product listing' do
+    log_admin_user_in
 
+    add_product
+
+    click_on 'Pale Ale'
+    click_on 'Edit'
+    fill_in 'product[name]', with: 'Lager'
+    fill_in 'product[description]', with: 'This clear, crisp, dry Lager is our signature.'
+    click_on 'Submit'
+    expect(page).to have_content "Lager"
+    expect(page).to have_content "This clear, crisp, dry Lager is our signature."
+
+  end
 end

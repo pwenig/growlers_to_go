@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:success] = "Login Successful, Welcome #{user.email}"
-      redirect_to '/'
+      redirect_to '/products'
     else
       flash.now[:error] = "Invalid Email and Password Combination"
       render "new"

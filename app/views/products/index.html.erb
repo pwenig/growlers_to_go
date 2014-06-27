@@ -11,9 +11,15 @@
       <!--end product_picture-->
 
       <div class="product_description">
+        <% if current_user.admin? %>
         <li>
           <%= link_to product.name, product_path(product.id) %>
         </li>
+          <% else %>
+          <li>
+            <%= product.name %>
+          </li>
+          <% end %>
         <li>
           <%= product.description %>
         </li>
