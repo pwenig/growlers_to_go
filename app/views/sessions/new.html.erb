@@ -1,0 +1,15 @@
+<div class="authentication_form">
+  <h2>Please Login:</h2>
+
+  <%= form_tag({:controller => :sessions, :action => :create}) %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+  <h3><%= link_to 'Click here to register', users_path%></h3>
+</div>
+
+
+
+

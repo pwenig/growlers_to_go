@@ -22,11 +22,15 @@
       <li><a href="/">Growlers to Go</a></li>
     </ul>
     <ul class = "pull-right">
+      <% if @user %>
+        <li><a href="#">Welcome</a><%= @user.email %></li>
+        <% else %>
         <li><a href="#">Welcome</a></li>
+        <% end %>
         <li><a href='/products'>View Products</a></li>
         <li><a href='/products/new'>Add Products</a></li>
 
-        <li><a href="#">Login</a></li>
+        <li><%= link_to 'Register/Login', new_session_path %></li>
         <li><a href="#">Logout</a></li>
 
     </ul>
@@ -38,7 +42,9 @@
 
   </div>
 </div>
-
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
 
 <%= yield %>
 
