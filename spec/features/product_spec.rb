@@ -31,4 +31,15 @@ feature 'Products' do
     expect(page).to have_content "This clear, crisp, dry Lager is our signature."
 
   end
+
+  scenario 'admin can delete product listing' do
+    log_admin_user_in
+
+    add_product
+
+    click_on 'Pale Ale'
+    click_on 'Edit'
+    click_on 'Delete'
+    expect(page).to_not have_content 'Pale Ale'
+  end
 end
