@@ -23,7 +23,7 @@
     </ul>
     <ul class = "pull-right">
       <% if @user %>
-        <li><a href="#">Welcome</a><%= @user.email %></li>
+        <li><a href="#">Welcome</a><%= @user.email %> </li>
         <% else %>
         <li><a href="#">Welcome</a></li>
         <% end %>
@@ -31,7 +31,8 @@
         <li><a href='/products/new'>Add Products</a></li>
 
         <li><%= link_to 'Register/Login', new_session_path %></li>
-        <li><a href="#">Logout</a></li>
+
+        <li><%= link_to 'Logout', sessions_path, :method => :delete %></li>
 
     </ul>
   </div>
