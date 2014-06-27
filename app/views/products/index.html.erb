@@ -1,0 +1,30 @@
+
+
+<div class="content_container">
+  <p class="flash_notice"><%= flash[:alert] %></p>
+
+  <% @products.each do |product| %>
+    <div class="product_container">
+      <div class="product_picture_small">
+        <%= image_tag product.image.to_s %>
+      </div>
+      <!--end product_picture-->
+
+      <div class="product_description">
+        <li>
+          <%= link_to product.name, product_path(product.id) %>
+        </li>
+        <li>
+          <%= product.description %>
+        </li>
+        <li>
+          <%= product.abv %>
+        </li>
+
+      </div>
+      <!--end product_description-->
+    </div>
+
+    <!--end product_container-->
+  <% end %>
+</div><!--end content_container-->

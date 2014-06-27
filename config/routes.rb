@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#new'
   post '/users', to: 'users#create'
+
+  resources :products
+
 end
