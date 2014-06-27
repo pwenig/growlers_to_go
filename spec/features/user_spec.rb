@@ -4,6 +4,6 @@ feature 'Users' do
 
   scenario 'Users visits index and registers' do
     visit '/'
-    expect(page).to have_content "welcome"
+    expect(page).to have_content "Welcome"
   end
 end

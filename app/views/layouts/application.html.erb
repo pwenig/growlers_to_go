@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GrowlersToGo</title>
+  <title>Growlers to Go</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <meta charset="UTF-8">
+  <title>Growlers To Go</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link rel="stylesheet" href="main.css">
+
 </head>
+
 <body>
+<div class="nav">
+  <div class="container">
+    <ul class="pull-left">
+      <li><a href="/">Growlers to Go</a></li>
+    </ul>
+    <ul class = "pull-right">
+        <li><a href="#">Welcome</a></li>
+        <li><a href='/products'>View Products</a></li>
+        <li><a href='/products/new'>Add Products</a></li>
+
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Logout</a></li>
+
+    </ul>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Growlers to Go</h1>
+
+  </div>
+</div>
+
 
 <%= yield %>
 

@@ -1,0 +1,181 @@
+
+/*
+	STYLE.CSS:
+	One stylesheet to rule them all.
+
+	selector { property:value }
+
+*/
+
+
+/* ----- =structure ----- */
+
+
+.nav a {
+  font-size: 125%;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+  color: red;
+}
+
+.nav li {
+  display: inline;
+  color: red;
+  font-size: 90%;
+  font-weight: bold;
+  padding: 17px 25px 15px 25px;
+  text-decoration: none;
+}
+
+/*Borders between each button */
+.nav li+li {
+  border-left: 1px solid #000;
+}
+
+.jumbotron {
+  background-position:center;
+  background-image:url('http://graphics8.nytimes.com/images/2009/07/09/nyregion/brewery-480.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 500px;
+
+}
+
+
+.jumbotron h1 {
+  color: red;
+  font-size: 48px;
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.learn-more h3 {
+  font-family: 'Shift', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.learn-more a {
+  color: #00b0ff;
+}
+.featured-breweries{
+  background-color:#efefef;
+  border-bottom:1px solid #dbdbdb;
+}
+.featured-breweries h2{
+  color:#393c3d;
+  font-size:24px;
+}
+.featured-breweries p{
+  font-size:15px;
+  margin-bottom:13px;
+}
+
+.authentication_form {
+  min-width: 300px;
+  max-width: 500px;
+  padding: 3em;
+  margin: 0 auto;
+  margin-top: 8%;
+  border-radius: 5px;
+  background-color: red;
+  border: 2px solid black;
+}
+
+.authentication_form h2 {
+  margin-top: 0;
+}
+.authentication_form label {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: .3em;
+}
+
+.authentication_form input {
+  padding: .4em;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  border-color: #FFF0CF;
+  font-size: 20px;
+}
+
+.authentication_form textarea {
+  font-size: 20px;
+  width: 100%;
+}
+
+.authentication_form input[type="submit"] {
+  padding: .3em .6em;
+  width: 8em;
+  margin-top: 1.2em;
+  background-color: black;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.product_container {
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2em;
+  background-color: ghostwhite;
+  width: auto;
+}
+
+.product_container a:first-child {
+  font-weight: bold;
+}
+.product_description {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.2em;
+  font-family: ariel;
+  margin-left: 20px;
+}
+
+.product_description li {
+  list-style-type: none;
+  clear: both;
+  overflow: hidden;
+}
+
+.product_picture_small {
+  display: inline-block;
+  margin: .5em;
+  width: 200px;
+  text-align: right;
+}
+
+.product_picture_small img {
+  height: 160px;
+  border:1px solid #021a40;
+  background-color: white;
+}
+
+.product_picture_large {
+  display: inline-block;
+  margin: .5em;
+  width: 270px;
+  text-align: right;
+}
+
+.product_picture_large img {
+  height: 220px;
+  border:1px solid #021a40;
+}
+
+.thumbnail img {
+  height: 200%;
+  width: 200%;
+}
