@@ -17,6 +17,18 @@
     <%= b.password_field :password %>
     <%= b.label :password_confirmation %>
     <%= b.password_field :password_confirmation %>
+
+    <%= label_tag :card_number, "Credit Card Number" %>
+    <%= text_field_tag :card_number, nil, name: nil %>
+
+    <%= label_tag :card_code, "Card Security Code (CVV)" %>
+    <%= text_field_tag :card_code, nil, name: nil %>
+
+    <%= label_tag :card_month, "Card Expiration" %>
+    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}%>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year"}%>
+
+
     <%= b.submit "Submit" %>
   <% end %>
 </div>
