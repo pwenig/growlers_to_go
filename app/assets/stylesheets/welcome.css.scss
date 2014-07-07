@@ -38,7 +38,7 @@
   background-image:url('http://graphics8.nytimes.com/images/2009/07/09/nyregion/brewery-480.jpg');
   background-repeat:no-repeat;
   background-size: cover;
-  height: 500px;
+  height: 400px;
 
 }
 
@@ -178,4 +178,8 @@
 .thumbnail img {
   height: 200%;
   width: 200%;
+}
+
+.pay_with_card_button {
+  text-align: center;
 }

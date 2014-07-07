@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'stripe', '~> 1.14.0'
+
 gem 'carrierwave', '~> 0.10.0'
 gem 'fog', '~> 1.22.1'
 gem 'dotenv-rails', '~> 0.11.1'

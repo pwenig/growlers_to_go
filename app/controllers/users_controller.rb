@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:register_message] = "Welcome, #{@user.name}"
-      redirect_to '/'
+      redirect_to '/charges/new'
     else
-      render '/user'
+      render :new
     end
 
   end

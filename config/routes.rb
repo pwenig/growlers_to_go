@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   resources :products
+  resources :charges
 
 end

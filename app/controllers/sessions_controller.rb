@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
     if user
       session[:user_id] = user.id
-      flash[:success] = "Login Successful, Welcome #{user.email}"
       redirect_to '/products'
     else
       flash.now[:error] = "Invalid Email and Password Combination"

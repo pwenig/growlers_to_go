@@ -35,7 +35,7 @@ feature 'Users' do
     fill_in 'email', with: 'mick@rollingstones.com'
     fill_in 'password', with: 'stones'
     click_on 'Submit'
-    expect(page).to have_content "Welcome mick@rollingstones.com"
+    expect(page).to have_content "Welcome, Mick Jagger"
   end
 
 end
