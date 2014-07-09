@@ -1,4 +1,3 @@
-
 <div class="authentication_form">
   <h2>Please Register:</h2>
 
@@ -11,6 +10,19 @@
   <%= form_for @user do |b| %>
     <%= b.label :name %>
     <%= b.text_field :name %>
+
+    <%= b.label :address %>
+    <%= b.text_field :address %>
+
+    <%= b.label :city %>
+    <%= b.text_field :city %>
+
+    <%= b.label :state %>
+    <%= b.text_field :state %>
+
+    <%= b.label :zip_code %>
+    <%= b.text_field :zip %>
+
     <%= b.label :email %>
     <%= b.email_field :email %>
     <%= b.label :password %>
