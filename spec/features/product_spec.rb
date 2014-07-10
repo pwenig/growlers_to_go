@@ -19,7 +19,6 @@ feature 'Products' do
 
   scenario 'admin can edit product listing' do
     log_admin_user_in
-
     add_product
 
     click_on 'Pale Ale'

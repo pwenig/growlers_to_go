@@ -8,4 +8,4 @@
 
 
 User.create!(name: 'Paul', email: 'paul@paul.com', password: 'admin', admin: true)
-User.create!(name: 'Joe', email: 'joe@joe.com', password: 'test', admin: false)
+User.create!(name: 'Joe', address: '1035 Pearl St.', city: 'Boulder', state: 'CO', zip: '80304', email: 'joe@joe.com', password: 'test', admin: false)

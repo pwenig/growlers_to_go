@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  @user = User.new(user_params)
+    @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
       flash[:register_message] = "Welcome, #{@user.name}"
@@ -12,9 +12,11 @@ class UsersController < ApplicationController
     else
       render :new
     end
-
   end
 
+  def index
+    @users = User.all
+  end
 
   private
   def user_params
