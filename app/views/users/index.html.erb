@@ -1,9 +1,14 @@
-<h3>Customers</h3>
-
-<% @users.each do |user| %>
-<%= user.name %>
-<%= user.address %>
-<%= user.city %>
-<%= user.state  %>
-<%= user.zip %>
-<% end %>
+<div class="customer_list">
+  <h3>Customers</h3>
+  <ul>
+    <% @users.each do |user| %>
+      <% if user.admin == false %>
+      <li><%= user.first_name %> <%= user.last_name %></li>
+      <li><%= user.address %></li>
+      <li><%= user.city %></li>
+      <li><%= user.state %></li>
+      <li><%= user.zip %></li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

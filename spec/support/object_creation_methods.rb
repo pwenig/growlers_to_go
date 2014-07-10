@@ -1,6 +1,7 @@
 def create_admin(updated_attributes = {})
   default_attributes = {
-    :name => "Keith Richards",
+    :first_name => "Keith",
+    :last_name => "Richards",
     :email => "keith@rollingstones.com",
     :password => "admin",
     :admin  => true
@@ -12,7 +13,8 @@ end
 
 def create_user(updated_attributes = {})
   default_attributes = {
-    :name => "Mick Jagger",
+    :first_name => "Mick",
+    :last_name => "Jagger",
     :address => "1035 Pearl St",
     :city => "Boulder",
     :state => "CO",

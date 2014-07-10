@@ -183,3 +183,21 @@
 .pay_with_card_button {
   text-align: center;
 }
+
+.customer_list {
+  margin-left: 8%;
+}
+
+.customer_list li {
+  display: inline;
+  color: black;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 17px 25px 15px 25px;
+  margin-left: 3%;
+}
+
+.customer_list h3 {
+  text-align: center;
+  color: red;
+}

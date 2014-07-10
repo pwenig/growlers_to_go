@@ -8,8 +8,11 @@
   </ul>
 
   <%= form_for @user do |b| %>
-    <%= b.label :name %>
-    <%= b.text_field :name %>
+    <%= b.label :first_name %>
+    <%= b.text_field :first_name %>
+
+    <%= b.label :last_name %>
+    <%= b.text_field :last_name %>
 
     <%= b.label :address %>
     <%= b.text_field :address %>

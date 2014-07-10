@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create!(name: 'Paul', email: 'paul@paul.com', password: 'admin', admin: true)
-User.create!(name: 'Joe', address: '1035 Pearl St.', city: 'Boulder', state: 'CO', zip: '80304', email: 'joe@joe.com', password: 'test', admin: false)
+User.create!(first_name: 'Paul', last_name: 'Jones' ,email: 'paul@paul.com', password: 'admin', admin: true)
+User.create!(first_name: 'Joe', last_name: 'Joseph', address: '1035 Pearl St.', city: 'Boulder', state: 'CO', zip: '80304', email: 'joe@joe.com', password: 'test', admin: false)

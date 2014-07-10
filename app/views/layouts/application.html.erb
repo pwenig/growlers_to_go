@@ -23,12 +23,12 @@
     </ul>
     <ul class = "pull-right">
       <% if current_user && current_user.admin? %>
-        <li><a href="#">Welcome, <%= current_user.name %></a> </li>
+        <li><a href="#">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></a></li>
         <li><%= render partial: 'layouts/admin' %></li>
         <li><%= link_to 'Logout', sessions_path, :method => :delete %></li>
 
         <% elsif current_user %>
-          <li><a href="#">Welcome, <%= current_user.name %></a> </li>
+          <li><a href="#">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></a></li>
         <li><%= link_to 'Logout', sessions_path, :method => :delete %></li>
 
           <% else %>
