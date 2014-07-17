@@ -12,14 +12,3 @@
   </ul>
 </div>
 
-
-<% @users.each do |user| %>
-<iframe
-width="300"
-height="350"
-frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDniIncBgHNstbnoDcNMPPV3O2uMOp_aYY
-    &q=<%= user.address%>, <%= user.city%>, <%= user.state%>">
-</iframe>
-<% end %>
-
