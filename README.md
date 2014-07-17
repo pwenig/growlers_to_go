@@ -13,6 +13,7 @@ The application is built in Rails and uses a PostgreSQL database. Testing is don
 
 * [Heroku Staging](http://growlers-to-go.herokuapp.com/)
 * Use Stripe test credit card 4242 4242 4242 4242. Any 3-digit security code.
+* Login as admin using the following email: mick@rollingstones.com. password: music
 
 
 ## Setup
