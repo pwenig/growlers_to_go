@@ -1,5 +1,11 @@
 <div class="authentication_form">
+
+
+
   <h2>Please Login:</h2>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
 
   <%= form_tag({:controller => :sessions, :action => :create}) %>
   <%= label_tag :email %>
