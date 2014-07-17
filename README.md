@@ -11,17 +11,18 @@ The application is built in Rails and uses a PostgreSQL database. Testing is don
 
 ## Important Links
 
-* [Staging](http://growlers-to-go.herokuapp.com/)
+* [Heroku Staging](http://growlers-to-go.herokuapp.com/)
+* Use Stripe test credit card 4242 4242 4242 4242. Any 3-digit security code.
 
 
 ## Setup
 Please follow the steps below to get this site set up for local development.
 1. Fork. Clone
-1. Bundle
-1. Create database by running rake db:create db:migrate db:seed
-1. When running the first time, login in as Admin to create products. Note login info in seeds.
-1. The app uses carrierwave. You may need to install 'imagemagick'(i.e. if you use homebrew: brew install imagemagick).
-1. Run tests using rspec. Should be green!
+2. Bundlle
+3. Create database by running rake db:create db:migrate db:seed
+4. When running the first time, login in as Admin to create products. Note login info in seeds.
+5. The app uses carrierwave. You may need to install 'imagemagick'(i.e. if you use homebrew: brew install imagemagick).
+6. Run tests using rspec. Should be green!
 
 ## Future Stories
 1. Improved Stripe payment integration.
@@ -29,6 +30,3 @@ Please follow the steps below to get this site set up for local development.
 3. API for additional info about featured beers.
 4. Mapping delivery routes
 
-## Running on Heroku:
-1. Use Stripe test credit card 4242 4242 4242 4242. Any 3-digit security code.
- 
