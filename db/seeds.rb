@@ -1,11 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
-User.create!(first_name: 'Paul', last_name: 'Jones' ,email: 'paul@paul.com', password: 'admin', admin: true)
-User.create!(first_name: 'Joe', last_name: 'Joseph', address: '1035 Pearl St.', city: 'Boulder', state: 'CO', zip: '80304', email: 'joe@joe.com', password: 'test', admin: false)
+User.create!(first_name: 'Paul', last_name: 'Wenig' ,email: 'paul@paul.com', password: 'admin', admin: true)
+User.create!(first_name: 'Mick', last_name: 'Jagger', address: '1035 Pearl St.', city: 'Boulder', state: 'CO', zip: '80302', email: 'mick@rollingstones.com', password: 'test', admin: false)
+User.create!(first_name: 'Keith', last_name: 'Richards', address: '1619 Pine St', city: 'Boulder', state: 'CO', zip: '80302', email: 'keith@rollingstones.com', password: 'test', admin: false)
+User.create!(first_name: 'Ron', last_name: 'Woods', address: '1165 13th St', city: 'Boulder', state: 'CO', zip: '80302', email: 'ron@rollingstones.com', password: 'test', admin: false)
+User.create!(first_name: 'Charlie', last_name: 'Watts', address: '2525 Taft Drive', city: 'Boulder', state: 'CO', zip: '80302', email: 'charlie@rollingstones.com', password: 'test', admin: false)
