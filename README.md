@@ -15,18 +15,20 @@ The application is built in Rails and uses a PostgreSQL database. Testing is don
 
 
 ## Setup
-
 Please follow the steps below to get this site set up for local development.
+1. Fork. Clone
+1. Bundle
+1. Create database by running rake db:create db:migrate db:seed
+1. When running the first time, login in as Admin to create products. Note login info in seeds.
+1. The app uses carrierwave. You may need to install 'imagemagick'(i.e. if you use homebrew: brew install imagemagick).
+1. Run tests using rspec. Should be green!
 
-1. Run Bundle Install
-1. Create database by running rake db:create
-1. Run migrations with rake db:migrate
-4. Run migrations in test database with RACK_ENV=test rake db:migrate
-5. Run tests using rspec
-
-Please note that this application is using carrierwave with rmagick. Please install 'imagemagick' prior to using this app through whatever means you use 
-(i.e. if you use homebrew: brew install imagemagick).
+## Future Stories
+1. Improved Stripe payment integration.
+2. More admin features - current customers, canceled customers, etc.
+3. API for additional info about featured beers.
+4. Mapping delivery routes
 
 ## Running on Heroku:
-1. To run the migrations on heroku, run heroku run rake db:migrate --app growlers-to-go
-
+1. Use Stripe test credit card 4242 4242 4242 4242. Any 3-digit security code.
+ 
