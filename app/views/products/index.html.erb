@@ -1,36 +1,21 @@
 <h2>This month's featured beers:</h2>
+<div id="content">
+  <div id="results">
+    <p class="flash_notice"><%= flash[:alert] %></p>
+    <ul>
+      <% @products.each do |product| %>
+        <li class="beer">
+          <%= image_tag product.image.to_s %>
 
-<div class="content_container">
-  <p class="flash_notice"><%= flash[:alert] %></p>
-
-  <% @products.each do |product| %>
-    <div class="product_container">
-      <div class="product_picture_small">
-        <%= image_tag product.image.to_s %>
-      </div>
-      <!--end product_picture-->
-
-      <div class="product_description">
-        <% if current_user.admin? %>
-        <li>
-          <%= link_to product.name, product_path(product.id) %>
-        </li>
+          <% if current_user.admin? %>
+        <span class="name">
+          <%= link_to product.name, product_path(product.id) %></span>
           <% else %>
-          <li>
-            <%= product.name %>
-          </li>
+            <span class="name"><%= product.name %></span>
           <% end %>
-        <li>
-          <%= product.description %>
+          <span class="description"><%= product.description %></span>
         </li>
-        <li>
-          <%= product.abv %>
-        </li>
-
-      </div>
-      <!--end product_description-->
-    </div>
-
-    <!--end product_container-->
-  <% end %>
-</div><!--end content_container-->
+      <% end %>
+    </ul>
+  </div>
+</div>
