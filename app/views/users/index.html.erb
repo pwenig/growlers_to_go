@@ -1,14 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style type="text/css">
+    #map {
+      width: 750px;
+      height: 500px;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_key']%>&sensor=false"></script>
+  <script type="text/javascript">
+
+    var geocoder,
+      lat,
+      long,
+      myLatlng = [],
+      locationsArray = [];
+
+    geocoder = new google.maps.Geocoder();
+
+
+    geocoder.geocode({address: "Boulder, CO"}, function (a, b) {
+      lat = a[0].geometry.location.k;
+      long = a[0].geometry.location.B;
+
+    });
+
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+      var mapOptions = {
+        zoom: 15,
+
+        center: new google.maps.LatLng(lat, long),
+
+        styles: [
+          {'featureType': 'water', 'stylers': [
+            {'visibility': 'on'},
+            {'color': '#acbcc9'}
+          ]},
+          {'featureType': 'landscape', 'stylers': [
+            {'color': '#f2e5d4'}
+          ]},
+          {'featureType': 'road.highway', 'elementType': 'geometry', 'stylers': [
+            {'color': '#c5c6c6'}
+          ]},
+          {'featureType': 'road.arterial', 'elementType': 'geometry', 'stylers': [
+            {'color': '#e4d7c6'}
+          ]},
+          {'featureType': 'road.local', 'elementType': 'geometry', 'stylers': [
+            {'color': '#fbfaf7'}
+          ]},
+          {'featureType': 'poi.park', 'elementType': 'geometry', 'stylers': [
+            {'color': '#c5dac6'}
+          ]},
+          {'featureType': 'administrative', 'stylers': [
+            {'visibility': 'on'},
+            {'lightness': 33}
+          ]},
+          {'featureType': 'road'},
+          {'featureType': 'poi.park', 'elementType': 'labels', 'stylers': [
+            {'visibility': 'on'},
+            {'lightness': 20}
+          ]},
+          {},
+          {'featureType': 'road', 'stylers': [
+            {'lightness': 20}
+          ]}
+        ]
+      };
+
+      var mapElement = document.getElementById('map');
+
+      var map = new google.maps.Map(mapElement, mapOptions);
+
+      <% @users.each do |user| %>
+      <% if user.address? %>
+      locationsArray.push(
+        '<%= "#{user.address}, #{user.city}, #{user.state}" %>'
+      );
+      console.log(locationsArray);
+      <% end %>
+      <% end %>
+
+      var codeAddresses = function (address) {
+        geocoder.geocode({ 'address': address}, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            var location = results[0].geometry.location;
+            marker = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(location.k, location.B)
+            })
+          }
+        })
+      };
+
+      var plotMarkers = function () {
+        var i;
+        for (i = 0; i < locationsArray.length; i++) {
+          codeAddresses(locationsArray[i]);
+        }
+      };
+
+      plotMarkers();
+
+    }
+
+  </script>
+</head>
+
+<body>
 <div class="customer_list">
   <h3>Customers</h3>
   <ul>
     <% @users.each do |user| %>
       <% if user.admin == false %>
-      <li><%= user.first_name %> <%= user.last_name %></li>
-      <li><%= user.address %> <%= user.city %>, <%= user.state %> <%= user.zip %></li>
-
-        <br>
+        <li><%= user.first_name %> <%= user.last_name %></li>
+        <li><%= user.address %> <%= user.city %>, <%= user.state %> <%= user.zip %></li>
+      <% end %>
     <% end %>
-    <% end %>
+    <br>
   </ul>
-</div>
 
+</div>
+<div id="map"></div>
+</body>
+</html>
