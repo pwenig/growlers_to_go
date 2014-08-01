@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <style type="text/css">
     #map {
       width: 750px;
       height: 500px;
     }
   </style>
+</head>
 
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&sensor=false"></script>
-  <script type="text/javascript">
+<body>
+<div class="customer_list">
+  <h3>Customers</h3>
+  <ul>
+    <% @users.each do |user| %>
+      <% if user.admin == false %>
+        <li><%= user.first_name %> <%= user.last_name %></li>
+        <li><%= user.address %> <%= user.city %>, <%= user.state %> <%= user.zip %></li>
+      <% end %>
+    <% end %>
+    <br>
+  </ul>
 
+</div>
+<div id="map"></div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_KEY'] %>&sensor=false"></script>
+<script type="text/javascript">
+
+  $(function () {
     var geocoder,
       lat,
       long,
@@ -19,7 +35,6 @@
       locationsArray = [];
 
     geocoder = new google.maps.Geocoder();
-
 
     geocoder.geocode({address: "Boulder, CO"}, function (a, b) {
       lat = a[0].geometry.location.k;
@@ -80,7 +95,6 @@
       locationsArray.push(
         '<%= "#{user.address}, #{user.city}, #{user.state}" %>'
       );
-      console.log(locationsArray);
       <% end %>
       <% end %>
 
@@ -106,24 +120,9 @@
       plotMarkers();
 
     }
+  });
 
-  </script>
-</head>
+</script>
 
-<body>
-<div class="customer_list">
-  <h3>Customers</h3>
-  <ul>
-    <% @users.each do |user| %>
-      <% if user.admin == false %>
-        <li><%= user.first_name %> <%= user.last_name %></li>
-        <li><%= user.address %> <%= user.city %>, <%= user.state %> <%= user.zip %></li>
-      <% end %>
-    <% end %>
-    <br>
-  </ul>
-
-</div>
-<div id="map"></div>
 </body>
 </html>
