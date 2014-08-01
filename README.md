@@ -24,6 +24,7 @@ Please follow the steps below to get this site set up for local development.
 4. When running the first time, login in as Admin to create products. Note login info in seeds.
 5. The app uses carrierwave. You may need to install 'imagemagick'(i.e. if you use homebrew: brew install imagemagick).
 6. Run tests using rspec. Should be green!
+7. Note .env_example for the keys you will need
 
 ## Future Stories
 1. Improved Stripe payment integration.
