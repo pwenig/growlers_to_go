@@ -14,8 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/.idea
+.idea
 .idea/growlers_to_go.iml
-
+public/uploads
 # Ignore all env.
 .env
